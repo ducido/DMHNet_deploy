@@ -1,5 +1,5 @@
 # DMH-Net-Implementation
-An implementation of DMH-Net
+An implementation of DMH-Net, orginal paper: https://arxiv.org/pdf/2207.09291.pdf
 
 
 ## Upload image
