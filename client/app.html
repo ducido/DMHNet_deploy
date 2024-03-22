@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Upload File</h2>
+<form action="/" method="post" enctype="multipart/form-data">
+  Select image to upload:
+  <input type="file" name="file" id="file">
+  <input type="submit" value="Upload Image" name="submit">
+</form>
+<!-- {% if filename %}
+  <h2>Uploaded Image:</h2>
+  <canvas id="myCanvas" width="1024" height="512" style="position: relative;">
+    <img id="myImage" src="{{ url_for('send_file', filename=filename) }}" alt="Uploaded Image">
+  </canvas>
+{% endif %} -->
+{% if filename %}
+  <h2>Uploaded Image:</h2>
+  <canvas id="myCanvas" width="1024" height="512" style="position: relative;"></canvas>
+  <button id="toggleButton">Start</button>
+  <button id="runModel">Run Model</button>
+  <script>
+    var imageUrl = "{{ url_for('send_file', filename=filename) }}";
+    // console.log("imageUrl: " + imageUrl);
+  </script>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+{% endif %}
+</body>
+</html>
